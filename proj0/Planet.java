@@ -63,4 +63,22 @@ public class Planet {
         double result = (f*dy)/r;
         return result;
     }
+
+    public double calcNetForceExertedByX (Planet[] args){
+        double result = 0;
+        for(int i=0;i<args.length;i++){
+            if(this == args[i]) continue;
+            result +=this.calcForceExertedByX(args[i]);
+        };
+        return result;
+    }
+    
+    public double calcNetForceExertedByY(Planet[] args){
+        double result = 0;
+        for(int i=0;i<args.length;i++){
+            if(this == args[i]) continue;
+            result +=this.calcForceExertedByY(args[i]);
+        };
+        return result;
+    }
 }
